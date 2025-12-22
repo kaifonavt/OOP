@@ -41,6 +41,10 @@ public class Vehicle {
             this.basePrice = basePrice;
         }
     }
+    public int getAge(int currentYear){
+        return(currentYear-this.year);
+    }
+    public double calculateInsuranceFee(){}
     @Override
     public String toString() {
 
