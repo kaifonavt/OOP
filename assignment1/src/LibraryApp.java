@@ -36,20 +36,19 @@ public class LibraryApp {
             System.out.println("No books in the library");
             return;
         }
-        books.forEach(System.out::println);
+        for (Book book : books) {
+            System.out.println(book.toString());
+        }
     }
     private void addBook() {
         try {
             System.out.print("Title: ");
             String title = scanner.nextLine();
-
             System.out.print("Author: ");
             String author = scanner.nextLine();
-
             System.out.print("Year: ");
             int year = scanner.nextInt();
             scanner.nextLine();
-
             books.add(new Book(title, author, year));
             System.out.println("Book added successfully");
         } catch (Exception e) {
@@ -59,9 +58,11 @@ public class LibraryApp {
     private void searchByTitle() {
         System.out.print("Enter title part: ");
         String query = scanner.nextLine().toLowerCase();
-        books.stream()
-                .filter(b -> b.getTitle().toLowerCase().contains(query))
-                .forEach(System.out::println);
+        for (Book book : books) {
+            if (book.getTitle().toLowerCase().contains(query)) {
+                System.out.println(book.toString());
+            }
+        }
     }
     private void borrowBook() {
         System.out.print("Enter book id: ");

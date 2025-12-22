@@ -1,4 +1,4 @@
-public class Vehicle {
+public abstract class Vehicle implements Serviceable {
     private int id;
     private String model;
     private int year;
@@ -44,9 +44,12 @@ public class Vehicle {
     public int getAge(int currentYear){
         return(currentYear-this.year);
     }
-    public double calculateInsuranceFee(){}
+    public abstract double calculateInsuranceFee();
     @Override
     public String toString() {
-
+        return "Vehicle{id=" + id +
+                ", model='" + model + '\'' +
+                ", price='" + basePrice + '\'' +
+                ", year=" + year + '}';
     }
 }
