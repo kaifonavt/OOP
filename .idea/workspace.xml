@@ -4,14 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="22721834-2678-4e65-85f3-2900055c397a" name="Changes" comment="classwork 19.12">
-      <change afterPath="$PROJECT_DIR$/asynchronusTask1/asynchronusTask1.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/asynchronusTask1/scr/Downloadable.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/asynchronusTask1/scr/PodcastEpisode.java" afterDir="false" />
+    <list default="true" id="22721834-2678-4e65-85f3-2900055c397a" name="Changes" comment="typeshiiiiii asynchrontask">
+      <change afterPath="$PROJECT_DIR$/asynchronusTask1/scr/ContentDemo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/asynchronusTask1/ContentItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/asynchronusTask1/scr/ContentItem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/asynchronusTask1/VideoLecture.java" beforeDir="false" afterPath="$PROJECT_DIR$/asynchronusTask1/scr/VideoLecture.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assignment2/assignment2.iml" beforeDir="false" afterPath="$PROJECT_DIR$/assignment2/assignment2.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/groupTask1/groupTask1.iml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,6 +23,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
+        <option value="SimpleSourceFile" />
       </list>
     </option>
   </component>
@@ -142,7 +141,7 @@
       <workItem from="1766729282396" duration="1000" />
       <workItem from="1766729300553" duration="50000" />
       <workItem from="1766729352371" duration="1984000" />
-      <workItem from="1767011908197" duration="3211000" />
+      <workItem from="1767011908197" duration="6406000" />
     </task>
     <task id="LOCAL-00001" summary="classwork 19.12">
       <option name="closed" value="true" />
@@ -152,7 +151,15 @@
       <option name="project" value="LOCAL" />
       <updated>1766127076117</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="typeshiiiiii asynchrontask">
+      <option name="closed" value="true" />
+      <created>1767015227465</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1767015227466</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -171,7 +178,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="classwork 19.12" />
-    <option name="LAST_COMMIT_MESSAGE" value="classwork 19.12" />
+    <MESSAGE value="typeshiiiiii asynchrontask" />
+    <option name="LAST_COMMIT_MESSAGE" value="typeshiiiiii asynchrontask" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
