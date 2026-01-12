@@ -4,13 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="22721834-2678-4e65-85f3-2900055c397a" name="Changes" comment="HappyNewYear">
-      <change afterPath="$PROJECT_DIR$/assignment3/Technical documentation" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assignment3/assignment3.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assignment3/src/Customer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+    <list default="true" id="22721834-2678-4e65-85f3-2900055c397a" name="Changes" comment="work with mmeeir">
+      <change afterPath="$PROJECT_DIR$/assignment3/src/MenuItem.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assignment3/src/MenuService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assignment3/src/edu/aitu/oop3/db/DatabaseConnection.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assignment3/assignment3.iml" beforeDir="false" afterPath="$PROJECT_DIR$/assignment3/assignment3.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assignment3/src/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/assignment3/src/Customer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assignment3/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/assignment3/src/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,8 +24,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="SimpleSourceFile" />
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -68,7 +69,11 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Application.Main.executor": "Debug",
+    "Downloaded.Files.Path.Enabled": "false",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "RunOnceActivity.typescript.service.memoryLimit.init": "true",
@@ -84,10 +89,10 @@
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "onboarding.tips.debug.path": "C:/Users/artur/Documents/GitHub/OOP/assignment3/src/Main.java",
-    "project.structure.last.edited": "Modules",
+    "project.structure.last.edited": "Libraries",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "com.intellij.jarRepository.settings.RemoteRepositoriesConfigurable",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
     "to.speed.mode.migration.done": "true",
     "vue.rearranger.settings.migration": "true"
   }
@@ -114,7 +119,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-30f59d01ecdd-26cb7f24e5b0-intellij.indexing.shared.core-IU-253.29346.138" />
+        <option value="bundled-jdk-30f59d01ecdd-26cb7f24e5b0-intellij.indexing.shared.core-IU-253.29346.240" />
       </set>
     </attachedChunks>
   </component>
@@ -148,7 +153,9 @@
       <workItem from="1767644707003" duration="6000" />
       <workItem from="1767799254737" duration="40000" />
       <workItem from="1768125738142" duration="600000" />
-      <workItem from="1768202487514" duration="345000" />
+      <workItem from="1768202487514" duration="1702000" />
+      <workItem from="1768213089541" duration="1198000" />
+      <workItem from="1768216317707" duration="3996000" />
     </task>
     <task id="LOCAL-00001" summary="classwork 19.12">
       <option name="closed" value="true" />
@@ -174,7 +181,15 @@
       <option name="project" value="LOCAL" />
       <updated>1767018534919</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="work with mmeeir">
+      <option name="closed" value="true" />
+      <created>1768203058219</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1768203058219</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -195,7 +210,8 @@
     <MESSAGE value="classwork 19.12" />
     <MESSAGE value="typeshiiiiii asynchrontask" />
     <MESSAGE value="HappyNewYear" />
-    <option name="LAST_COMMIT_MESSAGE" value="HappyNewYear" />
+    <MESSAGE value="work with mmeeir" />
+    <option name="LAST_COMMIT_MESSAGE" value="work with mmeeir" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -207,7 +223,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/assignment3/src/Main.java</url>
-          <line>10</line>
+          <line>5</line>
           <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>
