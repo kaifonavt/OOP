@@ -1,4 +1,4 @@
-public class MenuItem {
+public class MenuItem implements MenuService{
     private int id;
     private static int idGen;
     private String name;
@@ -44,5 +44,25 @@ public class MenuItem {
                 ", description='" + description + '\'' +
                 ", price='" + price + '\'' +
                 ", quantity=" + quantity + '}';
+    }
+
+    @Override
+    public void deleteMenuItem() {
+
+    }
+
+    @Override
+    public void editMenuItem() {
+
+    }
+
+    @Override
+    public void deleteMenuItem(int id) {
+
+    }
+
+    @Override
+    public void findMenuItem(String search) {
+
     }
 }

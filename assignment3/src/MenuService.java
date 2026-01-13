@@ -1,5 +1,6 @@
 public interface MenuService {
-    void addMenuItem();
     void deleteMenuItem();
-    void editMenuEdit();
+    void editMenuItem();
+    void deleteMenuItem(int id);
+    void findMenuItem(String search);
 }

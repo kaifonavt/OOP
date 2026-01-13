@@ -1,7 +1,7 @@
 6. Customer Delivery / Canteen Ordering System
 Description: Ordering system for a canteen or delivery service with menu management and order tracking.
 Milestone 1 (Assignment 3 – Exceptions, JDBC, SOLID):
-• • Entities: Customer, MenuItem, Order, OrderItem.
+• • Entities: Customer, MenuItem, Order(userId,itemsId(array),boolean completed,), OrderItem.
 • • Tables: customers, menu_items, orders, order_items.
 • • User stories: place an order, view active orders, mark order as completed.
 • • Exceptions: menu item not available; order not found; invalid quantity.

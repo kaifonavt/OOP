@@ -5,15 +5,25 @@ public class Order implements OrderService{
     private static int idGen;
     private boolean completed;
     private int customerId;
+    private String address;
     private List<OrderItem> items;
 
-    public Order(int id, List<OrderItem> items, int customerId, boolean completed) {
+    public Order(int id, List<OrderItem> items, int customerId, String address, boolean completed) {
         this.id = idGen++;
         this.items = items;
         this.customerId = customerId;
-        this.completed = false;
+        setCompleted(false);
+        setAddress(address);
     }
-
+    public String getAddress() {
+        return address;
+    }
+    public void setAddress(String address) {
+        if ((address == null)||(address.trim().isEmpty()))
+        {throw new IllegalArgumentException("Menu item name cannot be empty");}
+        else if (address.contains("@")){throw new IllegalArgumentException("Not valid email address");}
+        else {this.address = address;}
+    }
     public void setCompleted(boolean completed) {this.completed = completed;}
     public boolean getCompleted(){return completed;}
     public void addItem(OrderItem item){
@@ -36,8 +46,25 @@ public class Order implements OrderService{
     @Override
     public String toString() {
         return "Order{id=" + id +
-                OrderItem.toString() + '\'' +
+                items.toString() + '\'' +
                 ", copleted='" + completed +
                 ", totalPrice=" + this.getTotalPrice() + '}';
+    }
+
+    @Override
+    public void editOrder(int id, List<OrderItem> items, int customerId, String address, boolean completed) {
+        this.id = idGen++;
+        this.items = items;
+        this.customerId = customerId;
+        setCompleted(false);
+        setAddress(address);
+    }
+    @Override
+    public void deleteOrder(int id) {
+        items.remove(id);
+    }
+    @Override
+    public void findOrder(int id) {
+        items.get(id).toString();
     }
 }
