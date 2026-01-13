@@ -20,8 +20,7 @@ public class Order implements OrderService{
     }
     public void setAddress(String address) {
         if ((address == null)||(address.trim().isEmpty()))
-        {throw new IllegalArgumentException("Menu item name cannot be empty");}
-        else if (address.contains("@")){throw new IllegalArgumentException("Not valid email address");}
+        {throw new IllegalArgumentException("Address line cannot be empty");}
         else {this.address = address;}
     }
     public void setCompleted(boolean completed) {this.completed = completed;}

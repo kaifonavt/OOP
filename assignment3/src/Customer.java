@@ -13,7 +13,7 @@ public class Customer {
     public String getName() {return name;}
     public void setName(String name) {
         if ((name == null)||(name.trim().isEmpty()))
-        {throw new IllegalArgumentException("Menu item name cannot be empty");}
+        {throw new IllegalArgumentException("Username cannot be empty");}
         else {this.name = name;}
     }
 
@@ -22,6 +22,8 @@ public class Customer {
     }
 
     public void setEmail(String email) {
-        if ((name == null)||(name.trim().isEmpty()))
-        {throw new IllegalArgumentException("Menu item name cannot be empty");}}
-}
+        if ((email == null)||(email.trim().isEmpty()))
+        {throw new IllegalArgumentException("Email cannot be empty");}
+        else if (!email.contains("@")){throw new IllegalArgumentException("Not valid email address");}
+        else {this.email = email;}
+}}

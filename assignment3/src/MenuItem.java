@@ -47,18 +47,11 @@ public class MenuItem implements MenuService{
     }
 
     @Override
-    public void deleteMenuItem() {
-
-    }
-
-    @Override
-    public void editMenuItem() {
-
-    }
-
-    @Override
-    public void deleteMenuItem(int id) {
-
+    public void editMenuItem(String name, String description, double price, int quantity) {
+        setName(name);
+        setDescription(description);
+        setPrice(price);
+        setQuantity(quantity);
     }
 
     @Override
