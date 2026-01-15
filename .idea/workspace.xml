@@ -4,11 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="22721834-2678-4e65-85f3-2900055c397a" name="Changes" comment="work with mmeeir">
-      <change beforePath="$PROJECT_DIR$/assignment3/src/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/assignment3/src/Customer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assignment3/src/MenuItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/assignment3/src/MenuItem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assignment3/src/MenuService.java" beforeDir="false" afterPath="$PROJECT_DIR$/assignment3/src/MenuService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assignment3/src/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/assignment3/src/Order.java" afterDir="false" />
+    <list default="true" id="22721834-2678-4e65-85f3-2900055c397a" name="Changes" comment="Nurlanbek Marghulan [Minor changes debugging]">
+      <change beforePath="$PROJECT_DIR$/assignment3/src/CafeteriaApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/assignment3/src/CafeteriaApp.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -188,7 +185,15 @@
       <option name="project" value="LOCAL" />
       <updated>1768203058219</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Nurlanbek Marghulan [Minor changes debugging]">
+      <option name="closed" value="true" />
+      <created>1768291777152</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1768291777152</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -210,7 +215,8 @@
     <MESSAGE value="typeshiiiiii asynchrontask" />
     <MESSAGE value="HappyNewYear" />
     <MESSAGE value="work with mmeeir" />
-    <option name="LAST_COMMIT_MESSAGE" value="work with mmeeir" />
+    <MESSAGE value="Nurlanbek Marghulan [Minor changes debugging]" />
+    <option name="LAST_COMMIT_MESSAGE" value="Nurlanbek Marghulan [Minor changes debugging]" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -1,3 +1,4 @@
+import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -31,4 +32,75 @@ public class CafeteriaApp {
             }
         }
     }
+    public void printAllMenuItems() {
+           if(items.isEmpty()){
+               System.out.println("No items in the Menu");
+               return;
+           }
+           for ( MenuItem item : items ) {
+               System.out.println(item) ;
+           }
+    }
+    public void searchPosition() {
+        System.out.println("Enter a Position: ");
+        String search = scanner.nextLine().toLowerCase();
+
+        for(MenuItem item : items) {
+            if (item.getName().toLowerCase().contains(search)){
+                System.out.println(item) ;
+            }
+        }
+    }
+    public void addOrderItem() {
+        System.out.print("Enter menu item ID: ");
+        int id = Integer.parseInt(scanner.nextLine());
+
+        MenuItem item = menuService.getById(id);
+        if (item == null || !item.isAvailable()) {
+            System.out.println("Item not available");
+            return;
+        }
+
+        System.out.print("Enter quantity: ");
+        int quantity = Integer.parseInt(scanner.nextLine());
+
+        currentOrder.put(item, currentOrder.getOrDefault(item, 0) + quantity);
+        System.out.println("Added to order");
+    }
+    private void editOrderItem() {
+        System.out.print("Enter menu item ID: ");
+        int id = Integer.parseInt(scanner.nextLine());
+
+        MenuItem item = menuService.getById(id);
+        if (!currentOrder.containsKey(item)) {
+            System.out.println("Item not in order");
+            return;
+        }
+
+        System.out.print("Enter new quantity: ");
+        int quantity = Integer.parseInt(scanner.nextLine());
+
+        currentOrder.put(item, quantity);
+        System.out.println("Order updated");
+    }
+    private void deleteOrderItem() {
+        System.out.print("Enter menu item ID: ");
+        int id = Integer.parseInt(scanner.nextLine());
+
+        MenuItem item = menuService.getById(id);
+        currentOrder.remove(item);
+        System.out.println("Item removed");
+    }
+    private void finishOrder() {
+        if (currentOrder.isEmpty()) {
+            System.out.println("Your order is empty");
+            return;
+        }
+
+        int orderId = orderService.createOrder(currentOrder);
+        currentOrder.clear();
+
+        System.out.println("Order completed. Your order ID: " + orderId);
+    }
+
 }
