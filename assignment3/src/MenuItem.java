@@ -47,6 +47,10 @@ public class MenuItem implements MenuService{
     }
 
     @Override
+    public void getById(int id) {
+
+    }
+    @Override
     public void editMenuItem(String name, String description, double price, int quantity) {
         setName(name);
         setDescription(description);

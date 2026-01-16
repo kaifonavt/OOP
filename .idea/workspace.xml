@@ -4,8 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="22721834-2678-4e65-85f3-2900055c397a" name="Changes" comment="Nurlanbek Marghulan [Minor changes debugging]">
+    <list default="true" id="22721834-2678-4e65-85f3-2900055c397a" name="Changes" comment="typeshiiiiii asynchrontask">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assignment3/src/CafeteriaApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/assignment3/src/CafeteriaApp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assignment3/src/MenuItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/assignment3/src/MenuItem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assignment3/src/MenuService.java" beforeDir="false" afterPath="$PROJECT_DIR$/assignment3/src/MenuService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assignment3/src/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/assignment3/src/Order.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assignment3/src/OrderItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/assignment3/src/OrderItem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assignment3/src/OrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/assignment3/src/OrderService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/asynchronusTask1/asynchronusTask1.iml" beforeDir="false" afterPath="$PROJECT_DIR$/asynchronusTask1/asynchronusTask1.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/asynchronusTask1/scr/ContentDemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/asynchronusTask1/src/ContentDemo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/asynchronusTask1/scr/ContentItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/asynchronusTask1/src/ContentItem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/asynchronusTask1/scr/Downloadable.java" beforeDir="false" afterPath="$PROJECT_DIR$/asynchronusTask1/src/Downloadable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/asynchronusTask1/scr/PodcastEpisode.java" beforeDir="false" afterPath="$PROJECT_DIR$/asynchronusTask1/src/PodcastEpisode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/asynchronusTask1/scr/VideoLecture.java" beforeDir="false" afterPath="$PROJECT_DIR$/asynchronusTask1/src/VideoLecture.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,9 +31,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="SimpleSourceFile" />
-        <option value="Class" />
         <option value="Interface" />
+        <option value="SimpleSourceFile" />
       </list>
     </option>
   </component>
@@ -34,12 +46,12 @@
     &quot;assignee&quot;: &quot;kaifonavt&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/kaifonavt/OOP.git",
-    "accountId": "6e2d8efe-cf09-4339-acc7-ea8bc6c1ef8e"
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/kaifonavt/OOP.git&quot;,
+    &quot;accountId&quot;: &quot;f8055bf2-e905-4262-a916-328c4615e42f&quot;
   }
-}]]></component>
+}</component>
   <component name="HighlightingSettingsPerFile">
     <setting file="jar://$USER_HOME$/.jdks/openjdk-25.0.1/lib/src.zip!/jdk.accessibility/com/sun/java/accessibility/internal/AccessBridge.java" root0="FORCE_HIGHLIGHTING" />
   </component>
@@ -63,11 +75,7 @@
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;Application.Main.executor&quot;: &quot;Debug&quot;,
-    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
     &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
@@ -82,11 +90,11 @@
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/artur/Documents/GitHub/OOP/assignment3/src/Main.java&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
+    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/254570/IdeaProjects/OOP/Assigment/src/Main.java&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;settings.sync&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.intellij.jarRepository.settings.RemoteRepositoriesConfigurable&quot;,
     &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
@@ -113,7 +121,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-30f59d01ecdd-cffe25b9f5b3-intellij.indexing.shared.core-IU-253.28294.334" />
+        <option value="bundled-jdk-30f59d01ecdd-26cb7f24e5b0-intellij.indexing.shared.core-IU-253.29346.138" />
       </set>
     </attachedChunks>
   </component>
@@ -142,16 +150,8 @@
       <workItem from="1766729282396" duration="1000" />
       <workItem from="1766729300553" duration="50000" />
       <workItem from="1766729352371" duration="1984000" />
-      <workItem from="1767011908197" duration="6609000" />
-      <workItem from="1767080452758" duration="1970000" />
-      <workItem from="1767644707003" duration="6000" />
-      <workItem from="1767799254737" duration="40000" />
-      <workItem from="1768125738142" duration="600000" />
-      <workItem from="1768202487514" duration="1702000" />
-      <workItem from="1768213089541" duration="1198000" />
-      <workItem from="1768216317707" duration="3996000" />
-      <workItem from="1768279948375" duration="4289000" />
-      <workItem from="1768288030814" duration="1302000" />
+      <workItem from="1767011908197" duration="6406000" />
+      <workItem from="1768543031728" duration="3183000" />
     </task>
     <task id="LOCAL-00001" summary="classwork 19.12">
       <option name="closed" value="true" />
@@ -169,31 +169,7 @@
       <option name="project" value="LOCAL" />
       <updated>1767015227466</updated>
     </task>
-    <task id="LOCAL-00003" summary="HappyNewYear">
-      <option name="closed" value="true" />
-      <created>1767018534919</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1767018534919</updated>
-    </task>
-    <task id="LOCAL-00004" summary="work with mmeeir">
-      <option name="closed" value="true" />
-      <created>1768203058219</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1768203058219</updated>
-    </task>
-    <task id="LOCAL-00005" summary="Nurlanbek Marghulan [Minor changes debugging]">
-      <option name="closed" value="true" />
-      <created>1768291777152</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1768291777152</updated>
-    </task>
-    <option name="localTasksCounter" value="6" />
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -213,10 +189,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="classwork 19.12" />
     <MESSAGE value="typeshiiiiii asynchrontask" />
-    <MESSAGE value="HappyNewYear" />
-    <MESSAGE value="work with mmeeir" />
-    <MESSAGE value="Nurlanbek Marghulan [Minor changes debugging]" />
-    <option name="LAST_COMMIT_MESSAGE" value="Nurlanbek Marghulan [Minor changes debugging]" />
+    <option name="LAST_COMMIT_MESSAGE" value="typeshiiiiii asynchrontask" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -226,9 +199,13 @@
           <line>10</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/assignment3/src/Main.java</url>
-          <line>5</line>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/assignment3/src/CafeteriaApp.java</url>
+          <line>10</line>
+          <properties class="CafeteriaApp" method="run">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
           <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>

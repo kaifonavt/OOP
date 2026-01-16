@@ -8,12 +8,16 @@ public class Order implements OrderService{
     private String address;
     private List<OrderItem> items;
 
-    public Order(int id, List<OrderItem> items, int customerId, String address, boolean completed) {
+    public Order(List<OrderItem> items, int customerId, String address) {
         this.id = idGen++;
         this.items = items;
         this.customerId = customerId;
         setCompleted(false);
         setAddress(address);
+    }
+    public Order() {
+        this.id = idGen++;
+        this.customerId = 0;
     }
     public String getAddress() {
         return address;
@@ -38,7 +42,6 @@ public class Order implements OrderService{
     public List<OrderItem> getItems() {
         return items;
     }
-
     public int getCustomerId() {
         return customerId;
     }
@@ -49,7 +52,6 @@ public class Order implements OrderService{
                 ", copleted='" + completed +
                 ", totalPrice=" + this.getTotalPrice() + '}';
     }
-
     @Override
     public void editOrder(int id, List<OrderItem> items, int customerId, String address, boolean completed) {
         this.id = idGen++;
