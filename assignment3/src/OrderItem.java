@@ -9,10 +9,29 @@ public class OrderItem {
 
     public OrderItem(int orderId, int menuItemId, String menuItemName, int quantity, double price) {
         this.id = idGen++;
-        this.orderId = orderId;
         this.menuItemId = menuItemId;
         this.menuItemName = menuItemName;
         this.quantity = quantity;
+        this.price = price;
+    }
+
+    public int getOrderId() {
+        return orderId;
+    }
+
+    public void setOrderId(int orderId) {
+        this.orderId = orderId;
+    }
+
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
+    public void setPrice(double price) {
         this.price = price;
     }
 

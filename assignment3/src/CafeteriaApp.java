@@ -6,10 +6,11 @@ import java.util.Scanner;
 public class CafeteriaApp {
     private List<MenuItem> menuItems = new ArrayList<>();
     private List<OrderItem> orderItems = new ArrayList<>();
+    private List<Order> orders = new ArrayList<>();
     private Scanner scanner = new Scanner(System.in);
-    Order order = new Order();
     public void run() {
         boolean running = true;
+        orders.add(new Order());
         while (running) {
             System.out.println("Welcome to Cafeteria App!");
             System.out.println("1. Print all menu");
@@ -53,35 +54,35 @@ public class CafeteriaApp {
         }
     }
     public void addOrderItem() {
-        printAllOrderItems();
+        printAllMenuItems();
         System.out.print("Enter menu item ID: ");
         int id = Integer.parseInt(scanner.nextLine());
-        if (item == null || !item.isAvailable()) {
+        if (menuItems.get(id) == null || menuItems.get(id).getQuantity()==0) {
             System.out.println("Item not available");
             return;
         }
+        OrderItem currentItem = new OrderItem();
         System.out.print("Enter quantity: ");
         int quantity = Integer.parseInt(scanner.nextLine());
-        orderItems.add(new OrderItem())
+        orderItems.add(currentItem);
         System.out.println("Added to order");
     }
     private void editOrderItem() {
         printAllOrderItems();
-        System.out.print("Enter menu item ID: ");
+        System.out.print("Enter order item ID: ");
         int id = Integer.parseInt(scanner.nextLine());
-        MenuItem item = MenuService.getById(id);
-        if (!Order.containsKey(item)) {
+        if (orderItems.get(id) == null) {
             System.out.println("Item not in order");
             return;
         }
         System.out.print("Enter new quantity: ");
         int quantity = Integer.parseInt(scanner.nextLine());
-        orderItems.add(new OrderItem(item, quantity));
+        orderItems.get(id).setQuantity(quantity);
         System.out.println("Order updated");
     }
     private void deleteOrderItem() {
         printAllOrderItems();
-        System.out.print("Enter menu item ID: ");
+        System.out.print("Enter order item ID: ");
         int id = Integer.parseInt(scanner.nextLine());
         orderItems.remove(id);
         System.out.println("Item removed");
@@ -95,6 +96,7 @@ public class CafeteriaApp {
         int userId = Integer.parseInt(scanner.nextLine());
         System.out.print("Enter delivery address: ");
         String address = scanner.nextLine();
+        //saving ot database
         orderItems.clear();
         System.out.println("Order completed. " + order.toString());
     }

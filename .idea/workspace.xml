@@ -5,20 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="22721834-2678-4e65-85f3-2900055c397a" name="Changes" comment="typeshiiiiii asynchrontask">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_13_01_2026_08_06_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_13_01_2026_08_06__Changes_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assignment3/src/CafeteriaApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/assignment3/src/CafeteriaApp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assignment3/src/MenuItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/assignment3/src/MenuItem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assignment3/src/MenuService.java" beforeDir="false" afterPath="$PROJECT_DIR$/assignment3/src/MenuService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assignment3/src/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/assignment3/src/Order.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assignment3/src/OrderItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/assignment3/src/OrderItem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assignment3/src/OrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/assignment3/src/OrderService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/asynchronusTask1/asynchronusTask1.iml" beforeDir="false" afterPath="$PROJECT_DIR$/asynchronusTask1/asynchronusTask1.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/asynchronusTask1/scr/ContentDemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/asynchronusTask1/src/ContentDemo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/asynchronusTask1/scr/ContentItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/asynchronusTask1/src/ContentItem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/asynchronusTask1/scr/Downloadable.java" beforeDir="false" afterPath="$PROJECT_DIR$/asynchronusTask1/src/Downloadable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/asynchronusTask1/scr/PodcastEpisode.java" beforeDir="false" afterPath="$PROJECT_DIR$/asynchronusTask1/src/PodcastEpisode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/asynchronusTask1/scr/VideoLecture.java" beforeDir="false" afterPath="$PROJECT_DIR$/asynchronusTask1/src/VideoLecture.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -152,6 +144,8 @@
       <workItem from="1766729352371" duration="1984000" />
       <workItem from="1767011908197" duration="6406000" />
       <workItem from="1768543031728" duration="3183000" />
+      <workItem from="1769147670307" duration="38000" />
+      <workItem from="1769147725589" duration="3277000" />
     </task>
     <task id="LOCAL-00001" summary="classwork 19.12">
       <option name="closed" value="true" />
@@ -199,14 +193,10 @@
           <line>10</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
+        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/assignment3/src/CafeteriaApp.java</url>
-          <line>10</line>
-          <properties class="CafeteriaApp" method="run">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="2" />
+          <line>11</line>
+          <option name="timeStamp" value="5" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
