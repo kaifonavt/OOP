@@ -1,11 +1,10 @@
 public class Customer {
     private int id;
-    private static int idGen;
     private String name;
     private String email;
 
     public Customer(int id, String name, String address, String email) {
-        this.id = idGen++;
+        this.id = id;
         setName(name);
         setEmail(email);
     }

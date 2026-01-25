@@ -1,65 +1,40 @@
-public class MenuItem implements MenuService{
+public class MenuItem {
     private int id;
-    private static int idGen;
+    private static int idGen = 1;
     private String name;
     private String description;
     private double price;
     private int quantity;
+
     public MenuItem(String name, String description, double price, int quantity) {
-        id = idGen++;
-        setName(name);
-        setDescription(description);
-        setPrice(price);
-        setQuantity(quantity);
+        this.id = idGen++;
+        this.name = name;
+        this.description = description;
+        this.price = price;
+        this.quantity = quantity;
     }
-    public void setName(String name) {
-        if ((name == null)||(name.trim().isEmpty()))
-        {throw new IllegalArgumentException("Menu item name cannot be empty");}
-        else {this.name = name;}
-    }
+
     public String getName() {return name;}
-    public void setDescription(String description) {
-        if ((description == null)||(description.trim().isEmpty()))
-        {this.description = "No Description";}
-        else {this.description = description;}
-    }
+
     public String getDescription() {return description;}
-    public void setPrice(double price) {
-        if (price < 0)
-        {throw new IllegalArgumentException("Price cannot be negative");}
-        else {this.price = price;}
-    }
+
     public double getPrice() {return price;}
-    public void setQuantity(int quantity) {
-        if (quantity < 0)
-        {throw new IllegalArgumentException("Quantity cannot be negative");}
-        else {this.quantity = quantity;}
-    }
+
     public int getQuantity() {return quantity;}
     public int getId() {return id;}
+    public void reduceQuantity(int amount) {
+        if (amount > quantity)
+            throw new IllegalArgumentException("Not enough stock");
+        quantity -= amount;
+    }
+
     @Override
     public String toString() {
         return "MenuItem{id=" + id +
                 ", name='" + name + '\'' +
                 ", description='" + description + '\'' +
-                ", price='" + price + '\'' +
+                ", price=" + price + // Removed extra single quotes here
                 ", quantity=" + quantity + '}';
     }
 
-    @Override
-    public void getById(int id) {
-
-    }
-    @Override
-    public void editMenuItem(String name, String description, double price, int quantity) {
-        setName(name);
-        setDescription(description);
-        setPrice(price);
-        setQuantity(quantity);
-    }
-
-    @Override
-    public void findMenuItem(String search) {
-
-    }
 }

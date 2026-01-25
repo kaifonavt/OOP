@@ -1,103 +1,125 @@
-import java.awt.*;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 public class CafeteriaApp {
-    private List<MenuItem> menuItems = new ArrayList<>();
-    private List<OrderItem> orderItems = new ArrayList<>();
-    private List<Order> orders = new ArrayList<>();
+
+    // Services are instantiated here
+    private MenuService menuService = new MenuService();
+    private OrderService orderService = new OrderService();
+    private PaymentService paymentService = new PaymentService();
     private Scanner scanner = new Scanner(System.in);
+
     public void run() {
-        boolean running = true;
-        orders.add(new Order());
-        while (running) {
-            System.out.println("Welcome to Cafeteria App!");
-            System.out.println("1. Print all menu");
-            System.out.println("2. Print all order items");
-            System.out.println("3. Add position to order");
-            System.out.println("4. Edit position to order");
-            System.out.println("5. Delete position from order");
-            System.out.println("6. Finish the order");
-            System.out.println("7. Quit");
-            System.out.print("Choose an option: ");
-            int choice = scanner.nextInt();
-            scanner.nextLine();
-            switch (choice) {
-                case 1 -> printAllMenuItems();
-                case 2 -> printAllOrderItems();
-                case 3 -> addOrderItem();
-                case 4 -> editOrderItem();
-                case 5 -> deleteOrderItem();
-                case 6 -> finishOrder();
-                case 7 -> running = false;
-                default -> System.out.println("Invalid option");
+        // Add some initial menu items for demo purposes
+        menuService.add(new MenuItem("Coffee", "Hot brewed coffee", 2.50, 50));
+        menuService.add(new MenuItem("Pastry", "Fresh croissant", 3.00, 30));
+
+        while (true) {
+            System.out.println("\n--- Cafeteria Menu ---");
+            System.out.println("""
+                1. Add menu item
+                2. View menu
+                3. Place order
+                4. View active orders
+                5. Pay order
+                6. Exit
+                """);
+            System.out.print("Enter your choice: ");
+
+            try {
+                int choice = scanner.nextInt();
+                scanner.nextLine(); // Consume the newline character
+
+                switch (choice) {
+                    case 1 -> addMenuItem();
+                    case 2 -> menuService.getAll().forEach(System.out::println);
+                    case 3 -> placeOrder();
+                    case 4 -> orderService.getActiveOrders().forEach(System.out::println);
+                    case 5 -> payOrder();
+                    case 6 -> System.exit(0);
+                    default -> System.out.println("Invalid choice. Please try again.");
+                }
+            } catch (InputMismatchException e) {
+                System.out.println("Error: Invalid input. Please enter a number.");
+                scanner.nextLine(); // Clear the invalid input
+            } catch (Exception e) {
+                // Catching generic Exception for robustness in the main loop
+                System.out.println("An unexpected error occurred: " + e.getMessage());
             }
         }
     }
-    public void printAllMenuItems() {
-           if(menuItems.isEmpty()){
-               System.out.println("No items in the Menu");
-               return;
-           }
-           for ( MenuItem item : menuItems ) {
-               System.out.println(item) ;
-           }
-    }
-    public void printAllOrderItems() {
-        if(orderItems.isEmpty()){
-            System.out.println("No items in the Order");
-            return;
+
+    private void addMenuItem() {
+        System.out.print("Name: ");
+        String name = scanner.nextLine();
+        System.out.print("Description: ");
+        String desc = scanner.nextLine();
+
+        try {
+            System.out.print("Price: ");
+            double price = Double.parseDouble(scanner.nextLine());
+            System.out.print("Quantity: ");
+            int qty = Integer.parseInt(scanner.nextLine());
+
+            menuService.add(new MenuItem(name, desc, price, qty));
+            System.out.println("Menu item added successfully.");
+        } catch (NumberFormatException e) {
+            System.out.println("Error: Please enter a valid number for price and quantity.");
         }
-        for ( OrderItem item : orderItems ) {
-            System.out.println(item) ;
+    }
+
+    private void placeOrder() {
+        System.out.print("Customer ID: ");
+        int customerId = scanner.nextInt();
+        scanner.nextLine();
+
+        List<OrderItem> items = new ArrayList<>();
+
+        while (true) {
+            menuService.getAll().forEach(System.out::println);
+            System.out.print("Menu ID (0 to finish): ");
+            int id = scanner.nextInt();
+            if (id == 0) break;
+
+            System.out.print("Quantity: ");
+            int qty = scanner.nextInt();
+            scanner.nextLine();
+
+            try {
+                MenuItem item = menuService.getById(id);
+                item.reduceQuantity(qty);
+                items.add(new OrderItem(id, item.getName(), qty, item.getPrice()));
+            } catch (RuntimeException e) { // FIX APPLIED HERE
+                // Catches "Menu item not found" or "Not enough stock"
+                System.out.println("Error placing order item: " + e.getMessage());
+            }
+        }
+
+        try {
+            Order order = orderService.placeOrder(customerId, items);
+            System.out.println("Order placed: " + order);
+        } catch (RuntimeException e) {
+            // Catches "Order is empty"
+            System.out.println("Could not place order: " + e.getMessage());
         }
     }
-    public void addOrderItem() {
-        printAllMenuItems();
-        System.out.print("Enter menu item ID: ");
-        int id = Integer.parseInt(scanner.nextLine());
-        if (menuItems.get(id) == null || menuItems.get(id).getQuantity()==0) {
-            System.out.println("Item not available");
-            return;
+
+    private void payOrder() {
+        System.out.print("Order ID: ");
+        int id = scanner.nextInt();
+        scanner.nextLine();
+
+        try {
+            Order order = orderService.getById(id);
+            paymentService.processPayment(order);
+        } catch (RuntimeException e) {
+            // Catches "Order not found" or "Order already paid"
+            System.out.println("Payment failed: " + e.getMessage());
         }
-        OrderItem currentItem = new OrderItem();
-        System.out.print("Enter quantity: ");
-        int quantity = Integer.parseInt(scanner.nextLine());
-        orderItems.add(currentItem);
-        System.out.println("Added to order");
     }
-    private void editOrderItem() {
-        printAllOrderItems();
-        System.out.print("Enter order item ID: ");
-        int id = Integer.parseInt(scanner.nextLine());
-        if (orderItems.get(id) == null) {
-            System.out.println("Item not in order");
-            return;
-        }
-        System.out.print("Enter new quantity: ");
-        int quantity = Integer.parseInt(scanner.nextLine());
-        orderItems.get(id).setQuantity(quantity);
-        System.out.println("Order updated");
-    }
-    private void deleteOrderItem() {
-        printAllOrderItems();
-        System.out.print("Enter order item ID: ");
-        int id = Integer.parseInt(scanner.nextLine());
-        orderItems.remove(id);
-        System.out.println("Item removed");
-    }
-    private void finishOrder() {
-        if (orderItems.isEmpty()) {
-            System.out.println("Your order is empty");
-            return;
-        }
-        System.out.print("Enter user ID: ");
-        int userId = Integer.parseInt(scanner.nextLine());
-        System.out.print("Enter delivery address: ");
-        String address = scanner.nextLine();
-        //saving ot database
-        orderItems.clear();
-        System.out.println("Order completed. " + order.toString());
+
+    public static void main(String[] args) {
+        new CafeteriaApp().run();
     }
 }
+
+
