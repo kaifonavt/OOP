@@ -4,18 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="22721834-2678-4e65-85f3-2900055c397a" name="Changes" comment="typeshiiiiii asynchrontask">
-      <change afterPath="$PROJECT_DIR$/assignment3/src/services/PaymentService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="22721834-2678-4e65-85f3-2900055c397a" name="Changes" comment="Marghulan Nurlanbek [fixes]">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_13_01_2026_08_06_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_13_01_2026_08_06__Changes_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assignment3/src/CafeteriaApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/assignment3/src/CafeteriaApp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assignment3/src/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/assignment3/src/Customer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assignment3/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/assignment3/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assignment3/src/MenuItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/assignment3/src/MenuItem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assignment3/src/MenuService.java" beforeDir="false" afterPath="$PROJECT_DIR$/assignment3/src/MenuService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assignment3/src/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/assignment3/src/Order.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assignment3/src/OrderItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/assignment3/src/OrderItem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assignment3/src/OrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/assignment3/src/OrderService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,12 +37,12 @@
     &quot;assignee&quot;: &quot;kaifonavt&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/kaifonavt/OOP.git&quot;,
-    &quot;accountId&quot;: &quot;f8055bf2-e905-4262-a916-328c4615e42f&quot;
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/kaifonavt/OOP.git",
+    "accountId": "6e2d8efe-cf09-4339-acc7-ea8bc6c1ef8e"
   }
-}</component>
+}]]></component>
   <component name="HighlightingSettingsPerFile">
     <setting file="jar://$USER_HOME$/.jdks/openjdk-25.0.1/lib/src.zip!/jdk.accessibility/com/sun/java/accessibility/internal/AccessBridge.java" root0="FORCE_HIGHLIGHTING" />
   </component>
@@ -70,34 +63,34 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.CafeteriaApp.executor": "Run",
-    "Application.Main.executor": "Run",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
-    "git-widget-placeholder": "my-fixes",
-    "ignore.virus.scanning.warn.message": "true",
-    "junie.onboarding.icon.badge.shown": "true",
-    "kotlin-language-version-configured": "true",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "onboarding.tips.debug.path": "C:/Users/254570/IdeaProjects/OOP/Assigment/src/Main.java",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "com.intellij.jarRepository.settings.RemoteRepositoriesConfigurable",
-    "to.speed.mode.migration.done": "true",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.CafeteriaApp.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;my-fixes&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/254570/IdeaProjects/OOP/Assigment/src/Main.java&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.intellij.jarRepository.settings.RemoteRepositoriesConfigurable&quot;,
+    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\artur\Documents\GitHub\OOP\asynchronusTask1\scr" />
@@ -140,7 +133,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-30f59d01ecdd-26cb7f24e5b0-intellij.indexing.shared.core-IU-253.29346.138" />
+        <option value="bundled-jdk-30f59d01ecdd-cffe25b9f5b3-intellij.indexing.shared.core-IU-253.28294.334" />
       </set>
     </attachedChunks>
   </component>
@@ -190,7 +183,15 @@
       <option name="project" value="LOCAL" />
       <updated>1767015227466</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Marghulan Nurlanbek [fixes]">
+      <option name="closed" value="true" />
+      <created>1769369986136</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1769369986136</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -222,7 +223,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="classwork 19.12" />
     <MESSAGE value="typeshiiiiii asynchrontask" />
-    <option name="LAST_COMMIT_MESSAGE" value="typeshiiiiii asynchrontask" />
+    <MESSAGE value="Marghulan Nurlanbek [fixes]" />
+    <option name="LAST_COMMIT_MESSAGE" value="Marghulan Nurlanbek [fixes]" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
