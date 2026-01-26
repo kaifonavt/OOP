@@ -2,7 +2,6 @@ import java.util.*;
 
 public class CafeteriaApp {
 
-    // Services are instantiated here
     private MenuService menuService = new MenuService();
     private OrderService orderService = new OrderService();
     private PaymentService paymentService = new PaymentService();
@@ -27,7 +26,7 @@ public class CafeteriaApp {
 
             try {
                 int choice = scanner.nextInt();
-                scanner.nextLine(); // Consume the newline character
+                scanner.nextLine();
 
                 switch (choice) {
                     case 1 -> addMenuItem();
@@ -40,9 +39,8 @@ public class CafeteriaApp {
                 }
             } catch (InputMismatchException e) {
                 System.out.println("Error: Invalid input. Please enter a number.");
-                scanner.nextLine(); // Clear the invalid input
+                scanner.nextLine();
             } catch (Exception e) {
-                // Catching generic Exception for robustness in the main loop
                 System.out.println("An unexpected error occurred: " + e.getMessage());
             }
         }
@@ -88,8 +86,7 @@ public class CafeteriaApp {
                 MenuItem item = menuService.getById(id);
                 item.reduceQuantity(qty);
                 items.add(new OrderItem(id, item.getName(), qty, item.getPrice()));
-            } catch (RuntimeException e) { // FIX APPLIED HERE
-                // Catches "Menu item not found" or "Not enough stock"
+            } catch (RuntimeException e) {
                 System.out.println("Error placing order item: " + e.getMessage());
             }
         }
@@ -98,7 +95,6 @@ public class CafeteriaApp {
             Order order = orderService.placeOrder(customerId, items);
             System.out.println("Order placed: " + order);
         } catch (RuntimeException e) {
-            // Catches "Order is empty"
             System.out.println("Could not place order: " + e.getMessage());
         }
     }
@@ -112,7 +108,6 @@ public class CafeteriaApp {
             Order order = orderService.getById(id);
             paymentService.processPayment(order);
         } catch (RuntimeException e) {
-            // Catches "Order not found" or "Order already paid"
             System.out.println("Payment failed: " + e.getMessage());
         }
     }
