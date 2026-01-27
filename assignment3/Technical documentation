@@ -1,15 +1,15 @@
-6. Customer Delivery / Canteen Ordering System
+6. entities.Customer Delivery / Canteen Ordering System
 Description: Ordering system for a canteen or delivery service with menu management and order tracking.
 Milestone 1 (Assignment 3 – Exceptions, JDBC, SOLID):
-• • Entities: Customer, MenuItem, Order(userId,itemsId(array),boolean completed,), OrderItem.
+• • Entities: entities.Customer, entities.MenuItem, entities.Order(userId,itemsId(array),boolean completed,), entities.OrderItem.
 • • Tables: customers, menu_items, orders, order_items.
 • • User stories: place an order, view active orders, mark order as completed.
 • • Exceptions: menu item not available; order not found; invalid quantity.
-• • SOLID: OrderService, MenuService, PaymentService; repositories separate from business logic.
+• • SOLID: services.OrderService, services.MenuService, PaymentService; repositories separate from business logic.
 Milestone 2 (Assignment 4 – Language Features & Design Patterns):
-• • Use generics for collections and responses (List<Order>, Result<T>).
+• • Use generics for collections and responses (List<entities.Order>, Result<T>).
 • • Singleton for PricingRules or TaxConfig.
-• • Builder for Order (gradually adding items, customer, delivery details).
+• • Builder for entities.Order (gradually adding items, customer, delivery details).
 • • Factory for delivery options (PickupOrder, DeliveryOrder, DineInOrder).
 Endterm (Final project defense & Component Principles):
 • • Components: OrderingComponent, MenuManagementComponent, DeliveryComponent, BillingComponent.

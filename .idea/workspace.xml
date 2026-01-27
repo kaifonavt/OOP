@@ -4,11 +4,27 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="22721834-2678-4e65-85f3-2900055c397a" name="Changes" comment="Marghulan Nurlanbek [fixes]">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_13_01_2026_08_06_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_13_01_2026_08_06__Changes_.xml" beforeDir="false" />
+    <list default="true" id="22721834-2678-4e65-85f3-2900055c397a" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/assignment3/src/exceptions/InvalidInputException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assignment3/src/exceptions/InvalidQuantityException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assignment3/src/exceptions/MenuItemNotAvailableException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assignment3/src/exceptions/OrderNotFoundException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assignment3/src/interfaces/IDB.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assignment3/src/repositories/IMenuItemRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assignment3/src/repositories/MenuItemRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assignment3/Technical documentation" beforeDir="false" afterPath="$PROJECT_DIR$/assignment3/Technical documentation" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assignment3/src/CafeteriaApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/assignment3/src/CafeteriaApp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assignment3/src/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/assignment3/src/entities/Customer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assignment3/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/assignment3/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assignment3/src/MenuItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/assignment3/src/entities/MenuItem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assignment3/src/MenuService.java" beforeDir="false" afterPath="$PROJECT_DIR$/assignment3/src/services/MenuService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assignment3/src/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/assignment3/src/entities/Order.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assignment3/src/OrderItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/assignment3/src/entities/OrderItem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assignment3/src/OrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/assignment3/src/services/OrderService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assignment3/src/edu/aitu/oop3/db/DatabaseConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/assignment3/src/edu/aitu/oop3/db/DatabaseConnection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assignment3/src/services/PaymentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/assignment3/src/services/PaymentService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,9 +37,10 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="SimpleSourceFile" />
+        <option value="Exception" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -37,12 +54,12 @@
     &quot;assignee&quot;: &quot;kaifonavt&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/kaifonavt/OOP.git",
-    "accountId": "6e2d8efe-cf09-4339-acc7-ea8bc6c1ef8e"
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/kaifonavt/OOP.git&quot;,
+    &quot;accountId&quot;: &quot;6e2d8efe-cf09-4339-acc7-ea8bc6c1ef8e&quot;
   }
-}]]></component>
+}</component>
   <component name="HighlightingSettingsPerFile">
     <setting file="jar://$USER_HOME$/.jdks/openjdk-25.0.1/lib/src.zip!/jdk.accessibility/com/sun/java/accessibility/internal/AccessBridge.java" root0="FORCE_HIGHLIGHTING" />
   </component>
@@ -97,7 +114,7 @@
       <recent name="C:\Users\254570\IdeaProjects\OOP\Assigment\src" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.CafeteriaApp">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="CafeteriaApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="CafeteriaApp" />
       <module name="assignment3" />
@@ -125,8 +142,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.CafeteriaApp" />
         <item itemvalue="Application.Main" />
+        <item itemvalue="Application.CafeteriaApp" />
       </list>
     </recent_temporary>
   </component>
