@@ -7,77 +7,57 @@ import exceptions.InvalidQuantityException;
 import exceptions.MenuItemNotAvailableException;
 import exceptions.OrderNotFoundException;
 import repositories.IMenuItemRepository;
+import repositories.IOrderRepository;
 
 import java.sql.SQLException;
 import java.util.*;
 
 public class OrderService {
     private final IMenuItemRepository menuRepo;
-    private final Map<Integer, Order> activeOrders = new HashMap<>();
-    private int nextOrderId = 1;
+    private final IOrderRepository orderRepo;
 
-    public OrderService(IMenuItemRepository menuRepo) {
+    public OrderService(IMenuItemRepository menuRepo, IOrderRepository orderRepo) {
         this.menuRepo = menuRepo;
+        this.orderRepo = orderRepo;
     }
 
     public Order placeOrder(int customerId, List<OrderItem> orderItems)
             throws SQLException, InvalidQuantityException, MenuItemNotAvailableException {
 
-        for (OrderItem orderItem : orderItems) {
-            MenuItem menuItem = menuRepo.findById(orderItem.getMenuItemId());
-
-            if (menuItem == null) {
-                throw new MenuItemNotAvailableException("Menu item with ID " + orderItem.getMenuItemId() + " does not exist.");
-            }
-
-            if (menuItem.getQuantity() < orderItem.getQuantity()) {
-                throw new InvalidQuantityException("Not enough quantity for " + menuItem.getName() +
-                        ". Requested: " + orderItem.getQuantity() +
-                        ", Available: " + orderItem.getQuantity());
-            }
-            orderItem.setMenuItemName(menuItem.getName());
-            orderItem.setPrice(menuItem.getPrice());
+        for (OrderItem item : orderItems) {
+            validateStock(item.getMenuItemId(), item.getQuantity());
         }
+
         Order order = new Order(customerId);
-        order.setId(nextOrderId++);
         order.setItems(orderItems);
-        activeOrders.put(order.getId(), order);
+
+        // This replaces activeOrders.put()
+        orderRepo.create(order);
         return order;
     }
 
-    public List<Order> getActiveOrders() {
-        List<Order> orders = new ArrayList<>();
-        for (Order order : activeOrders.values()) {
-            if (!order.isCompleted()) {
-                orders.add(order);
-            }
-        }
-        return orders;
+    public List<Order> getActiveOrders() throws SQLException {
+        return orderRepo.findAllActive();
     }
 
-    public void markOrderAsCompleted(int orderId) throws OrderNotFoundException {
-        Order order = activeOrders.get(orderId);
+    public void markOrderAsCompleted(int orderId) throws OrderNotFoundException, SQLException {
+        Order order = orderRepo.findById(orderId);
         if (order == null) {
-            throw new OrderNotFoundException("Order with ID " + orderId + " not found");
+            throw new OrderNotFoundException("Order with ID " + orderId + " not found in DB.");
         }
-        order.setCompleted(true);
-    }
-
-    public Order getOrderById(int orderId) throws OrderNotFoundException {
-        Order order = activeOrders.get(orderId);
-        if (order == null) {
-            throw new OrderNotFoundException("Order with ID " + orderId + " not found");
-        }
-        return order;
+        orderRepo.updateStatus(orderId, true);
     }
 
     public void validateStock(int itemId, int requestedQty) throws MenuItemNotAvailableException, SQLException, InvalidQuantityException {
         MenuItem item = menuRepo.findById(itemId);
-        if (item == null) {
-            throw new MenuItemNotAvailableException("Item ID " + itemId + " does not exist.");
+        if (requestedQty <= 0) {
+            throw new InvalidQuantityException("Quantity must be at least 1.");
         }
-        if (item.getQuantity() < requestedQty) {
-            throw new InvalidQuantityException("Insufficient stock. Available: " + item.getQuantity());
-        }
+        if (item == null) throw new MenuItemNotAvailableException("Item ID " + itemId + " not found.");
+        if (item.getQuantity() < requestedQty) throw new InvalidQuantityException("Out of stock.");
+    }
+
+    public Order getOrderById(int orderId) throws SQLException {
+        return orderRepo.findById(orderId);
     }
 }

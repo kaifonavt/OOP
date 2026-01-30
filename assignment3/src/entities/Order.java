@@ -16,10 +16,11 @@ public class Order {
         this.status = "NEW";
     }
 
-    public Order(int id, String status, List<OrderItem> items) {
+    public Order(int id, int customerId, String status,boolean completed) {
         this.id = id;
+        this.customerId = customerId;
         this.status = status;
-        this.items = items;
+        this.completed = completed;
     }
 
     public Order(int id, int customerId, String status, boolean completed, List<OrderItem> items) {
@@ -29,7 +30,7 @@ public class Order {
         this.completed = completed;
         this.items = items;
     }
-
+    public String getStatus() {return status;}
     public int getId() { return id; }
     public void setId(int id) { this.id = id; }
 
@@ -49,4 +50,5 @@ public class Order {
         this.completed = completed;
         this.status = completed ? "COMPLETED" : "ACTIVE";
     }
+    public void setStatus(String status) { this.status = status; }
 }

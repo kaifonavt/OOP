@@ -3,7 +3,10 @@ import edu.aitu.oop3.db.DatabaseConnection;
 import entities.MenuItem;
 import entities.Order;
 import entities.OrderItem;
+import repositories.IMenuItemRepository;
+import repositories.IOrderRepository;
 import repositories.MenuItemRepository;
+import repositories.OrderRepository;
 import services.MenuService;
 import services.OrderService;
 import exceptions.*;
@@ -14,7 +17,8 @@ import java.util.List;
 import java.util.Scanner;
 
 public class CafeteriaApp {
-    private MenuItemRepository repo;
+    private IMenuItemRepository menuRepo;
+    private IOrderRepository orderRepo;
     private MenuService menuService;
     private OrderService orderService;
     private Scanner scanner;
@@ -22,9 +26,10 @@ public class CafeteriaApp {
 
     public CafeteriaApp() {
         IDB db = (IDB) DatabaseConnection.getInstance();
-        this.repo = new MenuItemRepository(db);
-        this.menuService = new MenuService(repo);
-        this.orderService = new OrderService(repo);
+        this.menuRepo = new MenuItemRepository(db);
+        this.orderRepo = new OrderRepository(db);
+        this.menuService = new MenuService(menuRepo);
+        this.orderService = new OrderService(menuRepo, orderRepo);
         this.scanner = new Scanner(System.in);
         this.paymentService = new PaymentService();
     }
@@ -104,7 +109,7 @@ public class CafeteriaApp {
             int id = scanner.nextInt();
             scanner.nextLine();
 
-            MenuItem item = repo.findById(id);
+            MenuItem item = menuRepo.findById(id);
             System.out.println(item);
 
         } catch (SQLException e) {
@@ -224,14 +229,6 @@ public class CafeteriaApp {
         }
     }
 
-    public MenuItemRepository getRepo() {
-        return repo;
-    }
-
-    public void setRepo(MenuItemRepository repo) {
-        this.repo = repo;
-    }
-
     private void payForOrder() {
         try {
             System.out.print("Enter order ID to pay: ");
@@ -239,13 +236,15 @@ public class CafeteriaApp {
 
             Order order = orderService.getOrderById(orderId);
             paymentService.processPayment(order);
-
-            System.out.println("Order paid and completed!");
+            orderService.markOrderAsCompleted(orderId);
+            System.out.println("Order #" + orderId + " paid and completed!");
 
         } catch (OrderNotFoundException e) {
             System.out.println("Error:" + e.getMessage());
+        } catch (SQLException e) {
+            System.out.println(" Database error: " + e.getMessage());
         } catch (Exception e) {
-            System.out.println("Payment failed: " + e.getMessage());
+            System.out.println(" Payment failed:" + e.getMessage());
         }
     }
 }
