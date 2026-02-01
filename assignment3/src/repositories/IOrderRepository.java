@@ -4,7 +4,7 @@ import entities.Order;
 import java.sql.SQLException;
 import java.util.List;
 
-public interface IOrderRepository {
+public interface IOrderRepository extends IRepository {
     void create(Order order) throws SQLException;
     void updateStatus(int orderId, boolean completed) throws SQLException;
     List<Order> findAllActive() throws SQLException;

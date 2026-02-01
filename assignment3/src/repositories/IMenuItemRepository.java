@@ -4,7 +4,7 @@ import entities.MenuItem;
 import java.sql.SQLException;
 import java.util.List;
 
-public interface IMenuItemRepository {
+public interface IMenuItemRepository extends IOrderRepository {
     void save(MenuItem item) throws  SQLException;
     List<MenuItem> findAll() throws SQLException;
     MenuItem findById(int id) throws  SQLException;
