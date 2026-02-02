@@ -14,7 +14,7 @@ public class MenuItemRepository implements IMenuItemRepository {
     }
 
     @Override
-    public void save(MenuItem item) throws SQLException {
+    public void add(MenuItem item) throws SQLException {
         String sql = "INSERT INTO menu_items (name, description, price, quantity) VALUES (?, ?, ?, ?)";
         Connection conn = database.getConnection();
         PreparedStatement stmt = conn.prepareStatement(sql);
@@ -30,7 +30,7 @@ public class MenuItemRepository implements IMenuItemRepository {
     }
 
     @Override
-    public List<MenuItem> findAll() throws SQLException {
+    public List<MenuItem> getAll() throws SQLException {
         List<MenuItem> items = new ArrayList<>();
         String sql = "SELECT * FROM menu_items";
 
@@ -56,7 +56,7 @@ public class MenuItemRepository implements IMenuItemRepository {
     }
 
     @Override
-    public MenuItem findById(int id) throws SQLException {
+    public MenuItem getById(int id) throws SQLException {
         String sql = "SELECT * FROM menu_items WHERE id = ?";
         Connection conn = database.getConnection();
         PreparedStatement stmt = conn.prepareStatement(sql);
@@ -78,6 +78,16 @@ public class MenuItemRepository implements IMenuItemRepository {
         }
 
         throw new SQLException("Item not found");
+    }
+    @Override
+    public void updateQuantity(int id, int newQuantity) throws SQLException {
+        String sql = "UPDATE menu_items SET quantity = ? WHERE id = ?";
+        try (Connection conn = database.getConnection();
+             PreparedStatement stmt = conn.prepareStatement(sql)) {
+            stmt.setInt(1, newQuantity);
+            stmt.setInt(2, id);
+            stmt.executeUpdate();
+        }
     }
 }
 

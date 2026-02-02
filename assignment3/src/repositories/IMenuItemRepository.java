@@ -1,11 +1,15 @@
 package repositories;
 
 import entities.MenuItem;
+
+import java.awt.*;
 import java.sql.SQLException;
 import java.util.List;
 
-public interface IMenuItemRepository extends IOrderRepository {
-    void save(MenuItem item) throws  SQLException;
-    List<MenuItem> findAll() throws SQLException;
-    MenuItem findById(int id) throws  SQLException;
+public interface IMenuItemRepository extends IRepository<MenuItem> {
+    void add(MenuItem item) throws  SQLException;
+    List<MenuItem> getAll() throws SQLException;
+    MenuItem getById(int id) throws  SQLException;
+    void updateQuantity(int id, int newQuantity) throws SQLException;
 }
+

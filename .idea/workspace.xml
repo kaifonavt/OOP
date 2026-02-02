@@ -5,8 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="22721834-2678-4e65-85f3-2900055c397a" name="Changes" comment="Marghulan Nurlanbek [fixes]">
-      <change afterPath="$PROJECT_DIR$/assignment3/src/repositories/IRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assignment3/src/config/TaxConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assignment3/src/entities/DeliveryOrder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assignment3/src/entities/DineInOrder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assignment3/src/entities/PickupOrder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assignment3/src/factories/OrderFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assignment3/src/util/Result.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assignment3/src/CafeteriaApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/assignment3/src/CafeteriaApp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assignment3/src/entities/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/assignment3/src/entities/Order.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assignment3/src/repositories/IMenuItemRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/assignment3/src/repositories/IMenuItemRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assignment3/src/repositories/IOrderRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/assignment3/src/repositories/IOrderRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assignment3/src/repositories/MenuItemRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/assignment3/src/repositories/MenuItemRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assignment3/src/repositories/OrderRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/assignment3/src/repositories/OrderRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assignment3/src/services/MenuService.java" beforeDir="false" afterPath="$PROJECT_DIR$/assignment3/src/services/MenuService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assignment3/src/services/OrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/assignment3/src/services/OrderService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,8 +34,8 @@
       <list>
         <option value="SimpleSourceFile" />
         <option value="Exception" />
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -49,7 +62,7 @@
     <option name="jreName" value="openjdk-25" />
   </component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="ProjectErrors" />
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 7
@@ -62,35 +75,35 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.CafeteriaApp.executor": "Run",
-    "Application.Main.executor": "Run",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
-    "git-widget-placeholder": "M2",
-    "ignore.virus.scanning.warn.message": "true",
-    "junie.onboarding.icon.badge.shown": "true",
-    "kotlin-language-version-configured": "true",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "onboarding.tips.debug.path": "C:/Users/254570/IdeaProjects/OOP/Assigment/src/Main.java",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "com.intellij.jarRepository.settings.RemoteRepositoriesConfigurable",
-    "to.speed.mode.migration.done": "true",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.CafeteriaApp.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;M2&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/254570/IdeaProjects/OOP/Assigment/src/Main.java&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.intellij.jarRepository.settings.RemoteRepositoriesConfigurable&quot;,
+    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />

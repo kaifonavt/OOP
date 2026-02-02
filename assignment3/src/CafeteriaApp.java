@@ -11,6 +11,8 @@ import services.MenuService;
 import services.OrderService;
 import exceptions.*;
 import services.PaymentService;
+import util.Result;
+
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
@@ -23,6 +25,7 @@ public class CafeteriaApp {
     private OrderService orderService;
     private Scanner scanner;
     private PaymentService paymentService;
+
 
     public CafeteriaApp() {
         IDB db = (IDB) DatabaseConnection.getInstance();
@@ -109,7 +112,7 @@ public class CafeteriaApp {
             int id = scanner.nextInt();
             scanner.nextLine();
 
-            MenuItem item = menuRepo.findById(id);
+            MenuItem item = menuRepo.getById(id);
             System.out.println(item);
 
         } catch (SQLException e) {
@@ -131,8 +134,12 @@ public class CafeteriaApp {
 
             while (true) {
                 System.out.println("\n--- Available Menu ---");
-                List<MenuItem> menu = menuService.getAllAvailableItems();
-                for (MenuItem item : menu) {
+                Result<List<MenuItem>> result = menuService.getAllAvailableItems();
+
+                if (result.isSuccess()) {
+                    List<MenuItem> availableItems = result.getData();
+
+                for (MenuItem item : availableItems) {
                     System.out.printf("ID: %d | %s - $%.2f (Available: %d)%n",
                             item.getId(), item.getName(), item.getPrice(), item.getQuantity());
                 }
@@ -144,15 +151,19 @@ public class CafeteriaApp {
                 System.out.print("Enter quantity: ");
                 int quantity = getIntInput();
 
-                try {
-                    MenuItem item = menuService.getMenuItemById(menuItemId);
-                    if (item == null) throw new MenuItemNotAvailableException("Item ID " + menuItemId + " not found!");
-                    if (item.getQuantity() < quantity) throw new InvalidQuantityException("Only " + item.getQuantity() + " left!");
+                    MenuItem selectedItem = menuService.getMenuItemById(menuItemId);
 
-                    orderItems.add(new OrderItem(0, menuItemId, item.getName(), quantity, item.getPrice()));
-                    System.out.println(" Added to order!");
-                } catch (MenuItemNotAvailableException | InvalidQuantityException e) {
-                    System.out.println("\n ERROR: " + e.getMessage());
+                    if (selectedItem == null) {
+                        System.out.println("Error: Item ID " + menuItemId + " not found!");
+                    } else if (selectedItem.getQuantity() < quantity) {
+                        System.out.println("Error: Only " + selectedItem.getQuantity() + " left!");
+                    } else {
+                        orderItems.add(new OrderItem(0, menuItemId, selectedItem.getName(), quantity, selectedItem.getPrice()));
+                        System.out.println("Added to order!");
+                    }
+                } else {
+                    System.out.println("Error: " + result.getMessage());
+                    break;
                 }
             }
             if (!orderItems.isEmpty()) {
@@ -201,15 +212,21 @@ public class CafeteriaApp {
 
     private void viewMenu() {
         try {
-            List<MenuItem> items = menuService.getAllAvailableItems();
+            Result<List<MenuItem>> result = menuService.getAllAvailableItems();
 
-            System.out.println("\n=== MENU ===");
-            for (MenuItem item : items) {
-                System.out.printf("ID: %d | %s - $%.2f%n",
+            if (result.isSuccess()) {
+                List<MenuItem> items = result.getData();
+
+               System.out.println("\n=== MENU ===");
+               for (MenuItem item : items) {
+                    System.out.printf("ID: %d | %s - $%.2f%n",
                         item.getId(), item.getName(), item.getPrice());
-                System.out.println("   " + item.getDescription());
-                System.out.println("   Available: " + item.getQuantity());
-                System.out.println("---");
+                    System.out.println("   " + item.getDescription());
+                    System.out.println("   Available: " + item.getQuantity());
+                    System.out.println("---");
+                }
+            } else {
+                System.out.println("Error: " + result.getMessage());
             }
         } catch (Exception e) {
             System.out.println("Error: " + e.getMessage());

@@ -4,6 +4,7 @@ import entities.MenuItem;
 import exceptions.InvalidInputException;
 import exceptions.MenuItemNotAvailableException;
 import repositories.IMenuItemRepository;
+import util.Result;
 
 import java.sql.SQLException;
 import java.util.List;
@@ -15,15 +16,21 @@ public class MenuService {
         this.menuRepo = menuItemRepository;
     }
 
-    public List<MenuItem> getAllAvailableItems() throws SQLException {
-        return menuRepo.findAll()
-                .stream()
-                .filter(item -> item.getQuantity() > 0)
-                .toList();
+    public Result<List<MenuItem>> getAllAvailableItems() {
+        try {
+            List<MenuItem> items = menuRepo.getAll().stream()
+                    .filter(item -> item.getQuantity() > 0)
+                    .toList();
+
+            return Result.success(items);
+        } catch (SQLException e) {
+            // This is much better than just throwing the error
+            return Result.error("Database error: " + e.getMessage());
+        }
     }
 
     public MenuItem getMenuItemById(int id) throws SQLException, MenuItemNotAvailableException{
-        MenuItem item = menuRepo.findById(id);
+        MenuItem item = menuRepo.getById(id);
         if(item.getQuantity() <= 0 ) {
             throw new MenuItemNotAvailableException("Menu item '" + item.getName() + "' is not available");
         }
@@ -39,6 +46,7 @@ public class MenuService {
         if (item.getQuantity() < 0) {
             throw new InvalidInputException("Quantity cannot be negative!");
         }
-        menuRepo.save(item);
+        menuRepo.add(item);
     }
+
 }

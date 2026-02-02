@@ -28,11 +28,20 @@ public class OrderService {
             validateStock(item.getMenuItemId(), item.getQuantity());
         }
 
-        Order order = new Order(customerId);
-        order.setItems(orderItems);
+        Order order = Order.builder()
+                .setCustomerId(customerId)
+                .setItems(orderItems)
+                .setStatus("NEW")
+                .setCompleted(false)
+                .build();
 
-        // This replaces activeOrders.put()
-        orderRepo.create(order);
+        orderRepo.add(order);
+
+        for (OrderItem item : orderItems) {
+            MenuItem menuItem = menuRepo.getById(item.getMenuItemId());
+            int newQuantity = menuItem.getQuantity() - item.getQuantity();
+            menuRepo.updateQuantity(item.getMenuItemId(), newQuantity);
+        }
         return order;
     }
 
@@ -41,7 +50,7 @@ public class OrderService {
     }
 
     public void markOrderAsCompleted(int orderId) throws OrderNotFoundException, SQLException {
-        Order order = orderRepo.findById(orderId);
+        Order order = orderRepo.getById(orderId);
         if (order == null) {
             throw new OrderNotFoundException("Order with ID " + orderId + " not found in DB.");
         }
@@ -49,7 +58,7 @@ public class OrderService {
     }
 
     public void validateStock(int itemId, int requestedQty) throws MenuItemNotAvailableException, SQLException, InvalidQuantityException {
-        MenuItem item = menuRepo.findById(itemId);
+        MenuItem item = menuRepo.getById(itemId);
         if (requestedQty <= 0) {
             throw new InvalidQuantityException("Quantity must be at least 1.");
         }
@@ -58,6 +67,6 @@ public class OrderService {
     }
 
     public Order getOrderById(int orderId) throws SQLException {
-        return orderRepo.findById(orderId);
+        return orderRepo.getById(orderId);
     }
 }

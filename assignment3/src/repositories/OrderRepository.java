@@ -12,7 +12,7 @@ public class OrderRepository implements IOrderRepository {
     public OrderRepository(IDB db) { this.db = db; }
 
     @Override
-    public void create(Order order) throws SQLException {
+    public void add(Order order) throws SQLException {
         String sql = "INSERT INTO orders (customer_id, status, completed) VALUES (?, ?, ?) RETURNING id";
         try (Connection conn = db.getConnection();
              PreparedStatement pstmt = conn.prepareStatement(sql)) {
@@ -59,7 +59,28 @@ public class OrderRepository implements IOrderRepository {
     }
 
     @Override
-    public Order findById(int id) throws SQLException {
+    public List<Order> getAll() throws SQLException {
+        List<Order> orders = new ArrayList<>();
+        String sql = "SELECT * FROM orders";
+
+        try (Connection conn = db.getConnection();
+             Statement stmt = conn.createStatement();
+             ResultSet rs = stmt.executeQuery(sql)) {
+
+            while (rs.next()) {
+                orders.add(new Order(
+                        rs.getInt("id"),
+                        rs.getInt("customer_id"),
+                        rs.getString("status"),
+                        rs.getBoolean("completed")
+                ));
+            }
+        }
+        return orders;
+    }
+
+    @Override
+    public Order getById(int id) throws SQLException {
         String sql = "SELECT * FROM orders WHERE id = ?";
         try (Connection conn = db.getConnection();
              PreparedStatement pstmt = conn.prepareStatement(sql)) {
