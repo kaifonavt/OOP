@@ -1,5 +1,6 @@
 package services;
 
+import config.TaxConfig;
 import entities.Order;
 import entities.OrderItem;
 import entities.MenuItem;
@@ -69,4 +70,8 @@ public class OrderService {
     public Order getOrderById(int orderId) throws SQLException {
         return orderRepo.getById(orderId);
     }
+    public double getFinalPrice(double subtotal) {
+        return subtotal + (subtotal * TaxConfig.getInstance().getTaxRate());
+    }
+
 }

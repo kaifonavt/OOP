@@ -24,7 +24,6 @@ public class MenuService {
 
             return Result.success(items);
         } catch (SQLException e) {
-            // This is much better than just throwing the error
             return Result.error("Database error: " + e.getMessage());
         }
     }
