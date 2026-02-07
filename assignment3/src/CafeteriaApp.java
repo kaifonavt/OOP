@@ -1,17 +1,13 @@
-import interfaces.IDB;
-import edu.aitu.oop3.db.DatabaseConnection;
-import entities.MenuItem;
-import entities.Order;
-import entities.OrderItem;
-import repositories.IMenuItemRepository;
-import repositories.IOrderRepository;
-import repositories.MenuItemRepository;
-import repositories.OrderRepository;
-import services.MenuService;
-import services.OrderService;
-import exceptions.*;
-import services.PaymentService;
-import util.Result;
+import com.cafeteria.billing.TaxConfig;
+import com.cafeteria.ordering.*;
+import com.cafeteria.infrastructure.IDB;
+import com.cafeteria.infrastructure.DatabaseConnection;
+import com.cafeteria.menumanagement.MenuItem;
+import com.cafeteria.menumanagement.IMenuItemRepository;
+import com.cafeteria.menumanagement.MenuItemRepository;
+import com.cafeteria.menumanagement.MenuService;
+import com.cafeteria.billing.PaymentService;
+import com.cafeteria.billing.Result;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -131,6 +127,7 @@ public class CafeteriaApp {
             System.out.print("Enter customer ID: ");
             int customerId = getIntInput();
             List<OrderItem> orderItems = new ArrayList<>();
+            double subtotal = 0;
 
             while (true) {
                 System.out.println("\n--- Available Menu ---");
@@ -159,6 +156,7 @@ public class CafeteriaApp {
                         System.out.println("Error: Only " + selectedItem.getQuantity() + " left!");
                     } else {
                         orderItems.add(new OrderItem(0, menuItemId, selectedItem.getName(), quantity, selectedItem.getPrice()));
+                        subtotal += (selectedItem.getPrice() * quantity);
                         System.out.println("Added to order!");
                     }
                 } else {
@@ -167,8 +165,20 @@ public class CafeteriaApp {
                 }
             }
             if (!orderItems.isEmpty()) {
+                double finalTotal = TaxConfig.getInstance().calculateTotalWithTax(subtotal);
+                System.out.println("\n--- Order Billing Summary ---");
+                System.out.printf("Subtotal: $%.2f%n", subtotal);
+                System.out.printf("Total with Tax (15%%): $%.2f%n", finalTotal);
+                System.out.println("------------------------------");
+
+                System.out.println("\nSelect Delivery Type: 1. Delivery | 2. Pickup | 3. Dine-in");
+                int typeChoice = getIntInput();
+                String type = (typeChoice ==1) ? "DELIVERY" : (typeChoice ==2) ? "PICKUP" :"DINEIN";
+
                 Order order = orderService.placeOrder(customerId, orderItems);
+                order.setTotalPrice(finalTotal);
                 System.out.println(" Order placed successfully! Order ID: " + order.getId());
+                System.out.println("Final Amount: $" + finalTotal);
             }
         } catch (Exception e) {
             System.out.println("Error: " + e.getMessage());
