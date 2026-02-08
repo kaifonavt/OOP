@@ -13,7 +13,7 @@ public class OrderRepository implements IOrderRepository {
 
     @Override
     public void add(Order order) throws SQLException {
-        String sql = "INSERT INTO orders (customer_id, status, completed, total_price ,order_type) VALUES (?, ?, ?) RETURNING id";
+        String sql = "INSERT INTO orders (customer_id, status, completed, total_price ,order_type) VALUES (?, ?, ? ,? ,?) RETURNING id";
         try (Connection conn = db.getConnection();
              PreparedStatement pstmt = conn.prepareStatement(sql)) {
             pstmt.setInt(1, order.getCustomerId());

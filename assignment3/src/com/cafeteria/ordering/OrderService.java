@@ -31,6 +31,13 @@ public class OrderService {
                 .setCompleted(false)
                 .build();
 
+        double subtotal = 0;
+        for(OrderItem item: orderItems) {
+            MenuItem menuItem = menuRepo.getById(item.getMenuItemId());
+            subtotal+= menuItem.getPrice() * item.getQuantity();
+        }
+        double finalPrice = subtotal * 1.15;
+        order.setTotalPrice(finalPrice);
         orderRepo.add(order);
 
         for (OrderItem item : orderItems) {
