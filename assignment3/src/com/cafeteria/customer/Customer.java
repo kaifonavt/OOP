@@ -1,4 +1,4 @@
-package com.cafeteria.ordering;
+package com.cafeteria.customer;
 
 public class Customer {
     private Integer id;

@@ -1,7 +1,7 @@
-6. com.cafeteria.ordering.Customer Delivery / Canteen Ordering System
+6. com.cafeteria.customer.Customer Delivery / Canteen Ordering System
 Description: Ordering system for a canteen or delivery service with menu management and order tracking.
 Milestone 1 (Assignment 3 – Exceptions, JDBC, SOLID):
-• • Entities: com.cafeteria.ordering.Customer, com.cafeteria.menumanagement.MenuItem, com.cafeteria.ordering.Order(userId,itemsId(array),boolean completed,), com.cafeteria.ordering.OrderItem.
+• • Entities: com.cafeteria.customer.Customer, com.cafeteria.menumanagement.MenuItem, com.cafeteria.ordering.Order(userId,itemsId(array),boolean completed,), com.cafeteria.ordering.OrderItem.
 • • Tables: customers, menu_items, orders, order_items.
 • • User stories: place an order, view active orders, mark order as completed.
 • • Exceptions: menu item not available; order not found; invalid quantity.
