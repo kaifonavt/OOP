@@ -4,12 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="22721834-2678-4e65-85f3-2900055c397a" name="Changes" comment="Marghulan Nurlanbek [fixes]">
-      <change afterPath="$PROJECT_DIR$/assignment3/src/com/cafeteria/customer/CustomerNotFoundExeption.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assignment3/src/com/cafeteria/customer/InvalidInputExeption.java" afterDir="false" />
+    <list default="true" id="22721834-2678-4e65-85f3-2900055c397a" name="Changes" comment="RoomsTask">
+      <change afterPath="$PROJECT_DIR$/LabRooms/LabRooms.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/LabRooms/src/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/LabRooms/src/Room.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/LabRooms/src/RoomMap.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assignment3/Technical documentation" beforeDir="false" afterPath="$PROJECT_DIR$/assignment3/Technical documentation" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assignment3/src/com/cafeteria/ordering/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/assignment3/src/com/cafeteria/customer/Customer.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,12 +41,12 @@
     &quot;assignee&quot;: &quot;kaifonavt&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/kaifonavt/OOP.git",
-    "accountId": "f8055bf2-e905-4262-a916-328c4615e42f"
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/kaifonavt/OOP.git&quot;,
+    &quot;accountId&quot;: &quot;b1bb5f4b-314a-4509-9db2-c66c6ea52804&quot;
   }
-}]]></component>
+}</component>
   <component name="HighlightingSettingsPerFile">
     <setting file="jar://$USER_HOME$/.jdks/openjdk-25.0.1/lib/src.zip!/jdk.accessibility/com/sun/java/accessibility/internal/AccessBridge.java" root0="FORCE_HIGHLIGHTING" />
   </component>
@@ -75,6 +77,7 @@
     "RunOnceActivity.git.unshallow": "true",
     "RunOnceActivity.typescript.service.memoryLimit.init": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "codeWithMe.voiceChat.enabledByDefault": "false",
     "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
     "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
@@ -85,11 +88,11 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "onboarding.tips.debug.path": "C:/Users/254570/IdeaProjects/OOP/Assigment/src/Main.java",
+    "onboarding.tips.debug.path": "/home/kaifonavt/Repos/OOP/LabRooms/src/Main.java",
     "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "com.intellij.jarRepository.settings.RemoteRepositoriesConfigurable",
+    "settings.editor.selected.configurable": "org.jetbrains.plugins.github.ui.GithubSettingsConfigurable",
     "to.speed.mode.migration.done": "true",
     "vue.rearranger.settings.migration": "true"
   }
@@ -137,7 +140,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-30f59d01ecdd-26cb7f24e5b0-intellij.indexing.shared.core-IU-253.29346.138" />
+        <option value="bundled-jdk-30f59d01ecdd-34e2839f716b-intellij.indexing.shared.core-IU-262.9437.185" />
+        <option value="bundled-js-predefined-d6986cc7102b-4abd2a77f808-JavaScript-IU-262.9437.185" />
       </set>
     </attachedChunks>
   </component>
@@ -229,7 +233,8 @@
     <MESSAGE value="classwork 19.12" />
     <MESSAGE value="typeshiiiiii asynchrontask" />
     <MESSAGE value="Marghulan Nurlanbek [fixes]" />
-    <option name="LAST_COMMIT_MESSAGE" value="Marghulan Nurlanbek [fixes]" />
+    <MESSAGE value="RoomsTask" />
+    <option name="LAST_COMMIT_MESSAGE" value="RoomsTask" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -239,7 +244,16 @@
           <line>10</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/LabRooms/src/Main.java</url>
+          <line>4</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>
